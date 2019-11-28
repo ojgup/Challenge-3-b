@@ -17,6 +17,8 @@ namespace Challenge_3_b.Controllers
 
             conn.Open();
             SqlCommand getRooms = new SqlCommand("SELECT * FROM ROOM", conn);
+            SqlCommand getClass = new SqlCommand("SELECT CLASS.CLASSCODE, CLASS.NAME, R.BUILDING, R.ROOMNO, R.CAPACITY FROM CLASS INNER JOIN ROOM R ON CLASS.BUILDING = R.BUILDING AND CLASS.ROOMNO = R.ROOMNO", conn);
+
 
             SqlDataReader datareader = getRooms.ExecuteReader();
 
