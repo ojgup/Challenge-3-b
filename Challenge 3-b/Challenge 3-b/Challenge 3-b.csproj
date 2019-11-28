@@ -160,6 +160,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomsUnusedController.cs" />
+    <Compile Include="Controllers\RoomsWithComputersController.cs" />
+    <Compile Include="Controllers\UsedController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -19,6 +19,12 @@ namespace Challenge_3_b
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Routes.MapHttpRoute(
+                name: "RoomApi",
+                routeTemplate: "api/{controller}/{category}",
+                defaults: new { id = RouteParameter.Optional }
+            );
         }
     }
 }
