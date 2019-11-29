@@ -15,16 +15,55 @@ namespace Challenge_3_b
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "RoomsWithComputers",
+                routeTemplate: "api/rooms/computer/",
+                defaults: new { controller = "Rooms", action = "RoomsWithComputers", id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
-                name: "RoomApi",
+                name: "unused",
+                routeTemplate: "api/rooms/unused/",
+                defaults: new { controller = "Rooms", action = "unused", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+               name: "used",
+               routeTemplate: "api/rooms/used/",
+               defaults: new { controller = "Rooms", action = "used", id = RouteParameter.Optional }
+           );
+
+
+
+            config.Routes.MapHttpRoute(
+                name: "Rooms",
+                routeTemplate: "api/rooms",
+                defaults: new { controller = "Rooms", action = "Get", category = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+    name: "Computers",
+    routeTemplate: "api/computers",
+    defaults: new { controller = "Computers", action = "Get", category = RouteParameter.Optional }
+);
+            config.Routes.MapHttpRoute(
+    name: "Class",
+    routeTemplate: "api/class",
+    defaults: new { controller = "Class", action = "Get", category = RouteParameter.Optional }
+    );
+
+            config.Routes.MapHttpRoute(
+    name: "ClassId",
+    routeTemplate: "api/class/{id}",
+    defaults: new { controller = "Class", action = "Get", id = RouteParameter.Optional }
+    );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
                 routeTemplate: "api/{controller}/{category}",
                 defaults: new { id = RouteParameter.Optional }
             );
+           
+
         }
     }
 }
